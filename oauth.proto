@@ -42,3 +42,9 @@ message OAuthVerifyResponse {
 message OAuthRefreshRequest {
     string refresh_token = 1;
 }
+
+message OAuthRefreshResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+    int64 expires_in = 3;
+}
