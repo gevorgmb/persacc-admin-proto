@@ -4,7 +4,7 @@ package admin;
 
 option go_package = "persacc/api/v1/admin;adminpb";
 
-import "api/v1/admin/permission.proto";
+import "permission.proto";
 
 message Role {
     int64 id = 1;

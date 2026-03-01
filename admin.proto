@@ -4,10 +4,10 @@ package admin;
 
 option go_package = "persacc/api/v1/admin;adminpb";
 
-import "api/v1/admin/user.proto";
-import "api/v1/admin/role.proto";
-import "api/v1/admin/customer.proto";
-import "api/v1/admin/permission.proto";
+import "user.proto";
+import "role.proto";
+import "customer.proto";
+import "permission.proto";
 
 service AdminService {
     rpc Register(RegisterRequest) returns (RegisterResponse);
