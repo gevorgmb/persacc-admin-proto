@@ -8,9 +8,16 @@ import "user.proto";
 import "role.proto";
 import "customer.proto";
 import "permission.proto";
+import "oauth.proto";
 
 service AdminService {
     rpc Register(RegisterRequest) returns (RegisterResponse);
+
+    rpc OAuthRegister(OAuthRegisterRequest) returns (OAuthRegisterResponse);
+    rpc OAuthToken(OAuthTokenRequest) returns (OAuthTokenResponse);
+    rpc OAuthVerify(OAuthVerifyRequest) returns (OAuthVerifyResponse);
+    rpc OAuthRefresh(OAuthRefreshRequest) returns (OAuthRefreshResponse);
+
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
     rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
