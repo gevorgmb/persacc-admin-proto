@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package admin;
+
+option go_package = "persacc/api/v1/admin;adminpb";
+
+message OAuthRegisterRequest {
+    string email = 1;
+    string password = 2;
+    string full_name = 3;
+    string phone = 4;
+    string birthday = 5;
+}
+
+message OAuthRegisterResponse {
+    bool ok = 1;
+    string message = 2;
+}
+
+message OAuthTokenRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message OAuthTokenResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+    int64 expires_in = 3;
+}
+
+message OAuthVerifyRequest {
+    string access_token = 1;
+}
+
+message OAuthVerifyResponse {
+    bool valid = 1;
+    string email = 2;
+    string name = 3;
+    int64 exp = 4;
+}
+
+message OAuthRefreshRequest {
+    string refresh_token = 1;
+}
