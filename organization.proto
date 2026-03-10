@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package admin;
+
+option go_package = "persacc/api/v1/admin;adminpb";
+
+import "google/protobuf/timestamp.proto";
+
+message Organization {
+    int64 id = 1;
+    int64 owner_id = 2;
+    string name = 3;
+    string description = 4;
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp updated_at = 6;
+}
+
+message CreateOrganizationRequest {
+    int64 owner_id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message CreateOrganizationResponse {
+    Organization organization = 1;
+}
+
+message GetOrganizationRequest {
+    int64 id = 1;
+}
+
+message GetOrganizationResponse {
+    Organization organization = 1;
+}
+
+message UpdateOrganizationRequest {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message UpdateOrganizationResponse {
+    Organization organization = 1;
+}
+
+message DeleteOrganizationRequest {
+    int64 id = 1;
+}
+
+message DeleteOrganizationResponse {
+    bool success = 1;
+}
+
+message ListOrganizationsRequest {
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+message ListOrganizationsResponse {
+    repeated Organization organizations = 1;
+    int32 total = 2;
+    int32 page = 3;
+    int32 limit = 4;
+}
