@@ -31,6 +31,7 @@ message GetOrganizationRequest {
 
 message GetOrganizationResponse {
     Organization organization = 1;
+    string message = 2;
 }
 
 message UpdateOrganizationRequest {
