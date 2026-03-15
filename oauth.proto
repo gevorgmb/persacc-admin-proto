@@ -15,6 +15,7 @@ message OAuthRegisterRequest {
 message OAuthRegisterResponse {
     bool ok = 1;
     string message = 2;
+    string uuid = 3;
 }
 
 message OAuthTokenRequest {
@@ -37,6 +38,7 @@ message OAuthVerifyResponse {
     string email = 2;
     string name = 3;
     int64 exp = 4;
+    string uuid = 5;
 }
 
 message OAuthRefreshRequest {
