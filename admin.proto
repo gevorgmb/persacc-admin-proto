@@ -10,6 +10,7 @@ import "customer.proto";
 import "permission.proto";
 import "oauth.proto";
 import "organization.proto";
+import "product.proto";
 
 
 service AdminService {
@@ -49,4 +50,10 @@ service AdminService {
     rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse);
     rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse);
     rpc ListOrganizations(ListOrganizationsRequest) returns (ListOrganizationsResponse);
+
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse);
+    rpc GetProduct(GetProductRequest) returns (GetProductResponse);
+    rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse);
+    rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse);
+    rpc ListProducts(ListProductsRequest) returns (ListProductsResponse);
 }
