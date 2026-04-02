@@ -77,6 +77,10 @@ message DeleteCustomerResponse {
 message ListCustomersRequest {
     int32 page = 1;
     int32 limit = 2;
+    string name = 3;
+    string email = 4;
+    string phone = 5;
+    string additional_info = 6;
 }
 
 message ListCustomersResponse {
