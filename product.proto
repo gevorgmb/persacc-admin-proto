@@ -13,12 +13,14 @@ message Product {
     string created_at = 6;
     string updated_at = 7;
     string deleted_at = 8;
+    map<string, string> additional_details = 9;
 }
 
 message CreateProductRequest {
     string sku = 1;
     string name = 2;
     string description = 3;
+    map<string, string> additional_details = 4;
 }
 
 message CreateProductResponse {
@@ -38,6 +40,7 @@ message UpdateProductRequest {
     string sku = 2;
     string name = 3;
     string description = 4;
+    map<string, string> additional_details = 5;
 }
 
 message UpdateProductResponse {
