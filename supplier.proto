@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package admin;
+
+option go_package = "persacc/api/v1/admin;adminpb";
+
+message Supplier {
+    int64 id = 1;
+    string name = 2;
+    string domain = 3;
+    string phone = 4;
+    string description = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message CreateSupplierRequest {
+    string name = 1;
+    string domain = 2;
+    string phone = 3;
+    string description = 4;
+}
+
+message CreateSupplierResponse {
+    Supplier supplier = 1;
+}
+
+message GetSupplierRequest {
+    int64 id = 1;
+}
+
+message GetSupplierResponse {
+    Supplier supplier = 1;
+}
+
+message UpdateSupplierRequest {
+    int64 id = 1;
+    string name = 2;
+    string domain = 3;
+    string phone = 4;
+    string description = 5;
+}
+
+message UpdateSupplierResponse {
+    Supplier supplier = 1;
+}
+
+message DeleteSupplierRequest {
+    int64 id = 1;
+}
+
+message DeleteSupplierResponse {
+    bool success = 1;
+}
+
+message ListSuppliersRequest {
+    int32 page = 1;
+    int32 limit = 2;
+    string name = 3;
+}
+
+message ListSuppliersResponse {
+    repeated Supplier suppliers = 1;
+    int32 total = 2;
+    int32 page = 3;
+    int32 limit = 4;
+}
