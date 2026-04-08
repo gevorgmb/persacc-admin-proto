@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package admin;
+
+option go_package = "persacc/api/v1/admin;adminpb";
+
+message Vendor {
+    int64 id = 1;
+    string name = 2;
+    string domain = 3;
+    string description = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message CreateVendorRequest {
+    string name = 1;
+    string domain = 2;
+    string description = 3;
+}
+
+message CreateVendorResponse {
+    Vendor vendor = 1;
+}
+
+message GetVendorRequest {
+    int64 id = 1;
+}
+
+message GetVendorResponse {
+    Vendor vendor = 1;
+}
+
+message UpdateVendorRequest {
+    int64 id = 1;
+    string name = 2;
+    string domain = 3;
+    string description = 4;
+}
+
+message UpdateVendorResponse {
+    Vendor vendor = 1;
+}
+
+message DeleteVendorRequest {
+    int64 id = 1;
+}
+
+message DeleteVendorResponse {
+    bool success = 1;
+}
+
+message ListVendorsRequest {
+    int32 page = 1;
+    int32 limit = 2;
+    string name = 3;
+}
+
+message ListVendorsResponse {
+    repeated Vendor vendors = 1;
+    int32 total = 2;
+    int32 page = 3;
+    int32 limit = 4;
+}

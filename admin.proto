@@ -12,6 +12,8 @@ import "oauth.proto";
 import "organization.proto";
 import "product.proto";
 import "product_category.proto";
+import "supplier.proto";
+import "vendor.proto";
 
 
 service AdminService {
@@ -63,4 +65,16 @@ service AdminService {
     rpc UpdateProductCategory(UpdateProductCategoryRequest) returns (UpdateProductCategoryResponse);
     rpc DeleteProductCategory(DeleteProductCategoryRequest) returns (DeleteProductCategoryResponse);
     rpc ListProductCategories(ListProductCategoriesRequest) returns (ListProductCategoriesResponse);
+
+    rpc CreateSupplier(CreateSupplierRequest) returns (CreateSupplierResponse);
+    rpc GetSupplier(GetSupplierRequest) returns (GetSupplierResponse);
+    rpc UpdateSupplier(UpdateSupplierRequest) returns (UpdateSupplierResponse);
+    rpc DeleteSupplier(DeleteSupplierRequest) returns (DeleteSupplierResponse);
+    rpc ListSuppliers(ListSuppliersRequest) returns (ListSuppliersResponse);
+
+    rpc CreateVendor(CreateVendorRequest) returns (CreateVendorResponse);
+    rpc GetVendor(GetVendorRequest) returns (GetVendorResponse);
+    rpc UpdateVendor(UpdateVendorRequest) returns (UpdateVendorResponse);
+    rpc DeleteVendor(DeleteVendorRequest) returns (DeleteVendorResponse);
+    rpc ListVendors(ListVendorsRequest) returns (ListVendorsResponse);
 }
