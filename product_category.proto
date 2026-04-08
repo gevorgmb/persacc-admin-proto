@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package admin;
+
+option go_package = "persacc/api/v1/admin;adminpb";
+
+message ProductCategory {
+    int64 id = 1;
+    int64 organization_id = 2;
+    string name = 3;
+    string description = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message CreateProductCategoryRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message CreateProductCategoryResponse {
+    ProductCategory category = 1;
+}
+
+message GetProductCategoryRequest {
+    int64 id = 1;
+}
+
+message GetProductCategoryResponse {
+    ProductCategory category = 1;
+}
+
+message UpdateProductCategoryRequest {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message UpdateProductCategoryResponse {
+    ProductCategory category = 1;
+}
+
+message DeleteProductCategoryRequest {
+    int64 id = 1;
+}
+
+message DeleteProductCategoryResponse {
+    bool success = 1;
+}
+
+message ListProductCategoriesRequest {
+    int32 page = 1;
+    int32 limit = 2;
+    string name = 3;
+}
+
+message ListProductCategoriesResponse {
+    repeated ProductCategory categories = 1;
+    int32 total = 2;
+    int32 page = 3;
+    int32 limit = 4;
+}

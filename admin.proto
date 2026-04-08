@@ -11,6 +11,7 @@ import "permission.proto";
 import "oauth.proto";
 import "organization.proto";
 import "product.proto";
+import "product_category.proto";
 
 
 service AdminService {
@@ -56,4 +57,10 @@ service AdminService {
     rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse);
     rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse);
     rpc ListProducts(ListProductsRequest) returns (ListProductsResponse);
+
+    rpc CreateProductCategory(CreateProductCategoryRequest) returns (CreateProductCategoryResponse);
+    rpc GetProductCategory(GetProductCategoryRequest) returns (GetProductCategoryResponse);
+    rpc UpdateProductCategory(UpdateProductCategoryRequest) returns (UpdateProductCategoryResponse);
+    rpc DeleteProductCategory(DeleteProductCategoryRequest) returns (DeleteProductCategoryResponse);
+    rpc ListProductCategories(ListProductCategoriesRequest) returns (ListProductCategoriesResponse);
 }
